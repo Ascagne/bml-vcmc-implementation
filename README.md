@@ -6,8 +6,6 @@
 
 We implemented a simple version of VCMC on the Bayesian probit regression case in the context of our Bayesian Machine Learning course given by Rémi Bardenet for the Master 2 Data Science in Lille.
 
-The reader only need to open the main notebook `main.ipynb` to execute this implementation that will automatically import required companion files.
-
 ## Installation
 
 Install the package in development mode
@@ -16,3 +14,5 @@ Install the package in development mode
 cd bml-vcmc-implementation
 conda develop .
 ```
+
+The reader only need to open the main notebook `main.ipynb` to execute this implementation that will automatically import required companion files.
