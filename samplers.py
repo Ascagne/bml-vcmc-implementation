@@ -20,7 +20,6 @@ def gibbs_sampler(X,y,nsim=10000,burnin=2000,sigma=1):
             thetas[i-burnin,:]=theta
     return thetas 
 
-
 def cmc(X,y,ncores=10,nsim=5000,burnin=1000):
     n,d=X.shape
     nsamples=nsim-burnin
