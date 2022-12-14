@@ -5,6 +5,8 @@ from src.functions import big_expect_q
 
 @njit
 def gradient_W(W, S, mu, betas, k, X, y, sigma=1):
+    """Compute the gradient of the relaxed variational objective wrt matrix Wk
+    """
     K, nsamples, d = betas.shape
     N = X.shape[0]
     G = (1/(sigma**2))*S[k]@W[k].T

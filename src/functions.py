@@ -6,17 +6,22 @@ from numba import njit
 
 @njit
 def tr_prod(A, B):
+    """Compute the trace of the matrix product AB
+    """
     return np.trace(np.dot(A, B))
 
 
 @njit
 def phi(x):
-    #'Cumulative distribution function for the standard normal distribution'
+    """Cumulative distribution function for the standard normal distribution
+    """
     return (1.0 + math.erf(x / math.sqrt(2.0))) / 2.0
 
 
 @njit
 def phi_deriv(x):
+    """Derivate of the cumulative distribution function for the standard normal distribution
+    """
     return np.exp(-(x**2)/2)/np.sqrt(2*np.pi)
 
 

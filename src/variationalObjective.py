@@ -1,17 +1,18 @@
 import numpy as np
 from numba import njit
+from src.functions import expect_log_1mphi_n, expect_log_phi_n, tr_prod
 
 
 @njit
 def variational_obj(W, betas, X, y, sigma=1):
     K, nsamples, d = betas.shape
     N = X.shape[0]
-    mu = np.zeros((ncores, d))
+    mu = np.zeros((K, d))
     for k in range(K):
         for j in range(nsamples):
             mu[k, :] += betas[k, j]
     # print(mu.shape)
-    S = np.zeros((ncores, d, d))
+    S = np.zeros((K, d, d))
     for k in range(K):
         for i in range(nsamples):
             S[k] += np.outer(betas[k, i], betas[k, i])
